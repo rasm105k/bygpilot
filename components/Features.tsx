@@ -4,9 +4,9 @@ export default function Features() {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="section-title">Fordele ved BygAI</h2>
+        <h2 className="section-title">Derfor vælger håndværkere BygAI</h2>
         <p className="section-subtitle">
-          Flere jobs, mere ro og professionel service – uden at løfte en finger.
+          Mere overskud, mindre bøvl. Simpelt.
         </p>
         <div className="features-grid">
           {siteConfig.features.map((f, i) => (

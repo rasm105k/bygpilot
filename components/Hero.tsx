@@ -8,7 +8,7 @@ export default function Hero() {
         <p>{siteConfig.heroSubtitle}</p>
         <div className="hero-buttons">
           <a href="#contact" className="btn btn-primary btn-large">{siteConfig.primaryCta}</a>
-          <a href="#how-it-works" className="btn btn-outline btn-large" style={{ borderColor: 'white', color: 'white' }}>
+          <a href="#tools" className="btn btn-outline btn-large" style={{ borderColor: 'white', color: 'white' }}>
             {siteConfig.secondaryCta}
           </a>
         </div>

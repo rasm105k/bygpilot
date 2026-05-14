@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="footer-tagline">{siteConfig.tagline}</div>
         </div>
         <div className="footer-links">
-          <a href="#how-it-works">Sådan virker det</a>
+          <a href="#tools">Vores værktøjer</a>
           <a href="#pricing">Priser</a>
           <a href="#contact">Kontakt</a>
         </div>

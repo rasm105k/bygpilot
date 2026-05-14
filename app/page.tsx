@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
-import Solution from "@/components/Solution";
+import Tools from "@/components/Tools";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
@@ -14,7 +14,7 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <Problem />
-      <Solution />
+      <Tools />
       <Features />
       <Testimonials />
       <Pricing />
