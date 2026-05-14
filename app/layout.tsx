@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BygPilot - Lead Generation",
-  description: "Modern landing page for lead generation",
+  title: "BygAI - AI-assistent til håndværkere",
+  description:
+    "Få din egen AI-assistent der tager telefonen, når du ikke kan. BygAI svarer på dansk, kvalificerer kunder og sender dig kun det vigtige via SMS.",
 };
 
 export default function RootLayout({
@@ -12,17 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <nav className="nav">
-          <div className="nav-logo">BygPilot</div>
-          <div className="nav-links">
-            <a href="#features" className="nav-link">Features</a>
-            <a href="#contact" className="nav-cta">Get Started</a>
-          </div>
-        </nav>
-        {children}
-      </body>
+    <html lang="da">
+      <body>{children}</body>
     </html>
   );
 }

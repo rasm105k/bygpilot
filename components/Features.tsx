@@ -1,38 +1,22 @@
-import React from 'react';
-
-const features = [
-  {
-    title: 'Fast Integration',
-    description: 'Get up and running in minutes with our simple API and intuitive dashboard.',
-    icon: '⚡',
-  },
-  {
-    title: 'Real-time Analytics',
-    description: 'Track your conversions and lead quality with deep-dive real-time insights.',
-    icon: '📈',
-  },
-  {
-    title: 'Secure by Design',
-    description: 'Enterprise-grade security ensuring your customer data is always protected.',
-    icon: '🛡️',
-  },
-];
+import { siteConfig } from "@/lib/config";
 
 export default function Features() {
   return (
-    <section id="features" className="features">
-      <div className="features-header">
-        <h2>Why Choose Our Platform?</h2>
-        <p>We provide the tools you need to turn visitors into lifelong customers.</p>
-      </div>
-      <div className="features-grid">
-        {features.map((feature, idx) => (
-          <div key={idx} className="feature-card">
-            <div className="feature-icon">{feature.icon}</div>
-            <h3>{feature.title}</h3>
-            <p>{feature.description}</p>
-          </div>
-        ))}
+    <section className="section">
+      <div className="container">
+        <h2 className="section-title">Fordele ved BygAI</h2>
+        <p className="section-subtitle">
+          Flere jobs, mere ro og professionel service – uden at løfte en finger.
+        </p>
+        <div className="features-grid">
+          {siteConfig.features.map((f, i) => (
+            <div key={i} className="feature-card">
+              <div className="feature-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

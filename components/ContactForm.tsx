@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { siteConfig } from "@/lib/config";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -23,7 +24,7 @@ export default function ContactForm() {
 
     if (error) {
       console.error("Supabase error:", error);
-      setErrorMessage(error.message || "Something went wrong. Please try again.");
+      setErrorMessage(error.message || "Noget gik galt. Prøv igen.");
       setStatus("error");
     } else {
       setStatus("success");
@@ -32,57 +33,38 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-form">
-        <h2>Contact Us</h2>
-
-        {status === "success" ? (
-          <div className="success-msg">
-            Thank you! Your message has been sent successfully.
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="full_name">Full Name</label>
-              <input
-                type="text"
-                id="full_name"
-                name="full_name"
-                required
-                placeholder="John Doe"
-              />
+      <div className="container">
+        <h2 className="form-section-title">Klar til at komme i gang?</h2>
+        <p className="form-section-subtitle">
+          Udfyld formularen, så vender vi tilbage inden for 24 timer med en gratis demo.
+        </p>
+        <div className="contact-form">
+          {status === "success" ? (
+            <div className="success-msg">
+              <p style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Tak for din henvendelse! 🎉</p>
+              <p>Vi vender tilbage inden for 24 timer.</p>
             </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="john@example.com"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={4}
-                placeholder="How can we help you?"
-              />
-            </div>
-
-            {status === "error" && (
-              <div className="error-msg">{errorMessage}</div>
-            )}
-
-            <button type="submit" disabled={status === "loading"} className="submit-btn">
-              {status === "loading" ? "Sending..." : "Send Message"}
-            </button>
-          </form>
-        )}
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="full_name">Fulde navn</label>
+                <input type="text" id="full_name" name="full_name" required placeholder="Jens Hansen" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="jens@example.dk" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Besked</label>
+                <textarea id="message" name="message" required rows={4} placeholder="Fortæl lidt om din virksomhed..." />
+              </div>
+              {status === "error" && <div className="error-msg">{errorMessage}</div>}
+              <button type="submit" disabled={status === "loading"} className="submit-btn">
+                {status === "loading" ? "Sender..." : "Prøv gratis i 14 dage"}
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );
