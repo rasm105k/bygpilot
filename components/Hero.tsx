@@ -1,8 +1,14 @@
 import { siteConfig } from "@/lib/config";
 
+const heroBg =
+  "https://images.unsplash.com/photo-1504307651254-84280e4bf3e7?w=1400&q=80";
+
 export default function Hero() {
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{ backgroundImage: `url(${heroBg})` }}
+    >
       <div className="hero-content">
         <h1>{siteConfig.heroTitle}</h1>
         <p>{siteConfig.heroSubtitle}</p>
